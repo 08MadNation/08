@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- For ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Title -->
+    <title>08MadNation</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- NEON Cursor CSS -->
+    <style>
+        body, html, #app {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #app {
+            overflow: hidden;
+            touch-action: pan-up;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+        }
+
+        #app h1 {
+            --fontSize: 60px;
+            --lineHeight: 80px;
+            width: auto;
+            height: calc(2 * var(--lineHeight));
+            line-height: var(--lineHeight);
+            margin: calc(50vh - var(--lineHeight)) auto 0;
+            font-size: var(--fontSize);
+            text-transform: uppercase;
+        }
+
+        #app a {
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #app canvas {
+            display: block;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <svg class="ip" viewBox="0 0 256 128" width="128px" height="64px" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#5ebd3e" />
+                    <stop offset="33%" stop-color="#ffb900" />
+                    <stop offset="67%" stop-color="#f78200" />
+                    <stop offset="100%" stop-color="#e23838" />
+                </linearGradient>
+                <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
+                    <stop offset="0%" stop-color="#e23838" />
+                    <stop offset="33%" stop-color="#973999" />
+                    <stop offset="67%" stop-color="#009cdf" />
+                    <stop offset="100%" stop-color="#5ebd3e" />
+                </linearGradient>
+            </defs>
+            <g fill="none" stroke-linecap="round" stroke-width="16">
+                <g class="ip__track" stroke="#ddd">
+                    <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+                    <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
+                </g>
+                <g stroke-dasharray="180 656">
+                    <path class="ip__worm1" stroke="url(#grad1)" stroke-dashoffset="0" d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56" />
+                    <path class="ip__worm2" stroke="url(#grad2)" stroke-dashoffset="358" d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64" />
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="madnation-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="madnationNav">
+
+                        <!-- Nav brand -->
+                        <a href="index.html" class="nav-brand"><img src="img/core-img/08-madnation1.png" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="aboutus.html">About Us</a></li>
+                                    <li><a href="blog.html">News</a></li>
+                                    <li><a href="#">More</a>
+                                        <ul class="dropdown">
+                                            <li><a href="event.html">Events</a></li>
+                                            <li><a href="music.html">Musics</a></li>
+                                            <!-- <li><a href="login.html">Login</a></li> -->
+                                            <li><a href="#">Special Offer & FAQ</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="specialoffer.html">Special Offer</a></li>
+                                                    <li><a href="faq.html">FAQ</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+
+                                <!-- Login/Register & Cart Button -->
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Login/Register -->
+                                    <div class="classynav">
+                                        <ul>
+                                            <li><a href="#">Booking & Pricing</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="booking.html">Booking</a></li>
+                                                    <li><a href="pricing.html">Pricing</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Nav End -->
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/record.jpg);">
+        <div class="bradcumbContent">
+            <p>08 Madnation Miziki</p>
+            <h2>Choose Your Plan</h2>
+        </div>
+    </section>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Pricing Area Start ##### -->
+    <section class="pricing-table section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="section-heading text-center">
+                        <h2>Select the plan that works best for you</h2>
+                        <p>🎉 <strong>Exclusive Offer Alert!</strong> 🎉</p>
+
+                        <p align="justify">Unlock the ultimate creative edge with our unbeatable music production package! Whether you're an emerging artist or an established star, we’ve got the perfect bonus just for you. Start your musical journey with <strong>2 FREE revisions</strong> on your very first song, ensuring your track reaches perfection. But that's not all—enhance your vocals like never before with our <strong>FREE vocal preset pack</strong> (for both leads & background vocals), giving your sound that polished, professional quality. And to top it off, enjoy a <strong>FREE mixed acapella version</strong>, perfect for remixes, edits, or vocal showcases.</p>
+
+                        <p align="justify">With these powerful tools and bonuses, your music will stand out, sound sharper, and reach new heights. Don’t miss out—get started today and take your sound to the next level with this special offer!</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <!-- Card 1: Basic Plan -->
+                <div class="card">
+                    <h6 class="type">Basic</h6>
+                    <div class="price"><span>₱</span>1500</div>
+                    <h5 class="plan">Plan</h5>
+                    <ul class="details">
+                        <li>Mixing Up to 5 Tracks</li>
+                        <li>Mastering Single Track</li>
+                        <li>Bonus Included</li>
+                    </ul>
+                    <div class="buy-button">
+                        <a class="btn" href="booking.html">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Awesome Plan -->
+                <div class="card">
+                    <h6 class="type">Standard</h6>
+                    <div class="price"><span>₱</span>2000</div>
+                    <h5 class="plan">Plan</h5>
+                    <ul class="details">
+                        <li>Mixing Up to 10 Tracks</li>
+                        <li>Mastering Single Track</li>
+                        <li>Bonus Included</li>
+                    </ul>
+                    <div class="buy-button">
+                        <a class="btn" href="booking.html">Book Now</a>
+                    </div>                   
+                </div>
+
+                <!-- Card 3: Premium Plan -->
+                <div class="card">
+                    <h6 class="type">Premium</h6>
+                    <div class="price"><span>₱</span>2500</div>
+                    <h5 class="plan">Plan</h5>
+                    <ul class="details">
+                        <li>Mixing Up to 20 Tracks</li>
+                        <li>Mastering Single Track</li>
+                        <li>Bonus Included</li>
+                    </ul>
+                    <div class="buy-button">
+                        <a class="btn" href="booking.html">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Pricing Area End ##### -->
+
+    <!-- ##### NEON Cursor Section Start ##### -->
+    <div id="app">
+        <div id="hero">
+            <h1>08MADNATION<br/>MIZIKI</h1>
+            <a target="_blank" href="">by Christ ND</a>
+        </div>
+        <!-- NEON Cursor Canvas -->
+        <canvas id="neon-canvas"></canvas>
+    </div>
+    <!-- ##### NEON Cursor Section End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+                <div class="col-12 col-md-6">
+                    <a href="#"><img src="img/core-img/08-madnation1.png" alt=""></a>
+                    <p class="copywrite-text"><a href="#">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</a></p>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="col-12 col-md-6">
+                    <div class="footer-social-nav">
+                        <ul>
+                            <li><a href="https://wa.me/639623471790" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            <li><a href="https://discord.gg/n5UhYGP5" target="_blank"><i class="fab fa-discord" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.tiktok.com/@08madnation?_t=8plxSdGpVq5&_r=1" target="_blank"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/08madnation?igsh=bng1dTFodGQ4ZnJz&utm_source=qr" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://youtube.com/@08madnation?si=eDlXN3iziOpNrpMq" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a href="https://open.spotify.com/artist/2zwKxFZDGWzkfSvqOsCYM7?si=hQ3rCoPYR9yYEfCQvtu7wQ" target="_blank"><i class="fab fa-spotify" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+    <!-- Import neonCursor and initialize it -->
+    <script type="module">
+        import { neonCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js';
+
+        neonCursor({
+            el: document.getElementById('app'),
+            shaderPoints: 16,
+            curvePoints: 80,
+            curveLerp: 0.5,
+            radius1: 5,
+            radius2: 30,
+            velocityTreshold: 10,
+            sleepRadiusX: 100,
+            sleepRadiusY: 100,
+            sleepTimeCoefX: 0.0025,
+            sleepTimeCoefY: 0.0025
+        });
+    </script>
+</body>
+
+</html>
