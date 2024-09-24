@@ -85,7 +85,7 @@
                                         <ul class="dropdown">
                                             <li><a href="event.html">Events</a></li>
                                             <li><a href="music.html">Musics</a></li>
-                                            <!-- <li><a href="login.html">Login</a></li> -->
+                                            <li><a href="login.html">Login</a></li>
                                             <li><a href="#">Special Offer & FAQ</a>
                                                 <ul class="dropdown">
                                                     <li><a href="specialoffer.html">Special Offer</a></li>
@@ -139,30 +139,33 @@
                         <h3>Book Your Session</h3>
                         <!-- Booking Form -->
                         <div class="booking-form">
-                            <form action="#" method="post">
+                            <form action="mailer.php" method="post">
+                                <!-- Hidden form type input -->
+                                <input type="hidden" name="form_type" value="booking_form_1">
+                                
                                 <div class="form-group">
                                     <label for="name">Full Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email address</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter Your Email" required>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="session-date">Preferred Session Date</label>
-                                    <input type="date" class="form-control" id="session-date" required>
+                                    <input type="date" class="form-control" name="session-date" id="session-date" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="package">Select Your Package</label>
-                                    <select class="form-control" id="package">
-                                        <option>Basic - ₱1500</option>
-                                        <option>Standard - ₱2000</option>
-                                        <option>Premium - ₱2500</option>
+                                    <select class="form-control" name="package" id="package">
+                                        <option value="Basic">Basic - ₱1500</option>
+                                        <option value="Standard">Standard - ₱2000</option>
+                                        <option value="Premium">Premium - ₱2500</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="message">Additional Details</label>
-                                    <textarea class="form-control" id="message" rows="4" placeholder="Enter any additional details here..."></textarea>
+                                    <textarea class="form-control" name="message" id="message" rows="4" placeholder="Enter any additional details here..."></textarea>
                                 </div>
                                 <button type="submit" class="btn oneMusic-btn mt-30">Book Now</button>
                             </form>
@@ -172,7 +175,6 @@
             </div>
         </div>
     </section>
-    
     <!-- ##### Booking Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
@@ -189,7 +191,6 @@
                     <div class="footer-social-nav">
                         <ul>
                             <li><a href="https://wa.me/639623471790" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                            <li><a href="https://discord.gg/n5UhYGP5" target="_blank"><i class="fab fa-discord" aria-hidden="true"></i></a></li>
                             <li><a href="https://www.tiktok.com/@08madnation?_t=8plxSdGpVq5&_r=1" target="_blank"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li>
                             <li><a href="https://www.instagram.com/08madnation?igsh=bng1dTFodGQ4ZnJz&utm_source=qr" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                             <li><a href="https://youtube.com/@08madnation?si=eDlXN3iziOpNrpMq" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
