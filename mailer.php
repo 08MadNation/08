@@ -17,12 +17,12 @@ function sendEmail($to, $subject, $body, $fromEmail) {
     try {
         // Server settings
         $mail->isSMTP();
-        $mail->Host = $_ENV['SMTP_HOST']; // Lark's SMTP server
+        $mail->Host = $_ENV['SMTP_HOST']; // SMTP server
         $mail->SMTPAuth = true;
-        $mail->Username = $_ENV['SMTP_USERNAME']; // SMTP username from .env
-        $mail->Password = $_ENV['SMTP_PASSWORD']; // SMTP password from .env
+        $mail->Username = $_ENV['SMTP_USERNAME']; // SMTP username
+        $mail->Password = $_ENV['SMTP_PASSWORD']; // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = $_ENV['SMTP_PORT']; // TCP port for Lark (587)
+        $mail->Port = $_ENV['SMTP_PORT']; // TCP port
 
         // Recipients
         $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']); // Sender's info from .env
@@ -37,6 +37,8 @@ function sendEmail($to, $subject, $body, $fromEmail) {
         $mail->send();
         return true;
     } catch (Exception $e) {
+        // Return detailed error message for debugging
+        echo 'Message could not be sent. PHPMailer Error: ', $mail->ErrorInfo;
         return false;
     }
 }
@@ -55,14 +57,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     // Email settings
-    $to = $_ENV['SMTP_FROM_EMAIL']; // Replace with your receiving email
+    $to = 'admin@08madnation.pro'; //receiving email
     $subjectLine = "New Submission from Website";
 
+    // Basic validations
     if (empty($name)) {
-        $errors[] = "Name is required";
+        $errors[] = "Name is required.";
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email format";
+        $errors[] = "Invalid email format.";
     }
 
     // Process form based on type
@@ -71,14 +74,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = sanitizeInput($_POST['message']);
 
         if (empty($subject)) {
-            $errors[] = "Subject is required";
+            $errors[] = "Subject is required.";
         }
         if (empty($message)) {
-            $errors[] = "Message is required";
+            $errors[] = "Message is required.";
         }
 
         if (empty($errors)) {
-            // Prepare email content for Form 1
+            // Prepare email content for Contact Form
             $body = "<h1>Contact Form Submission</h1>
                      <p><strong>Name:</strong> $name</p>
                      <p><strong>Email:</strong> $email</p>
@@ -87,9 +90,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Send email via SMTP
             if (sendEmail($to, $subjectLine, $body, $email)) {
-                echo "Form 1 (Contact Form) submitted successfully!";
+                echo "Contact Form submitted successfully!";
             } else {
-                echo "Error sending email.";
+                echo "Error sending the contact form email.";
             }
         }
     } elseif ($formType == 'booking_form_1') {
@@ -98,14 +101,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = sanitizeInput($_POST['message']);
 
         if (empty($sessionDate)) {
-            $errors[] = "Preferred session date is required";
+            $errors[] = "Preferred session date is required.";
         }
         if (empty($package)) {
-            $errors[] = "Package selection is required";
+            $errors[] = "Package selection is required.";
         }
 
         if (empty($errors)) {
-            // Prepare email content for Form 2
+            // Prepare email content for Booking Form 1
             $body = "<h1>Booking Form 1 Submission</h1>
                      <p><strong>Name:</strong> $name</p>
                      <p><strong>Email:</strong> $email</p>
@@ -114,9 +117,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                      <p><strong>Additional Message:</strong> $message</p>";
 
             if (sendEmail($to, $subjectLine, $body, $email)) {
-                echo "Form 2 (Booking Form 1) submitted successfully!";
+                echo "Booking Form 1 submitted successfully!";
             } else {
-                echo "Error sending email.";
+                echo "Error sending the booking form email.";
             }
         }
     } elseif ($formType == 'booking_form_2') {
@@ -126,17 +129,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = sanitizeInput($_POST['message']);
 
         if (empty($sessionDate)) {
-            $errors[] = "Preferred session date is required";
+            $errors[] = "Preferred session date is required.";
         }
         if (empty($package)) {
-            $errors[] = "Package selection is required";
+            $errors[] = "Package selection is required.";
         }
         if (empty($consoleHours)) {
-            $errors[] = "Console hours selection is required";
+            $errors[] = "Console hours selection is required.";
         }
 
         if (empty($errors)) {
-            // Prepare email content for Form 3
+            // Prepare email content for Booking Form 2
             $body = "<h1>Booking Form 2 Submission</h1>
                      <p><strong>Name:</strong> $name</p>
                      <p><strong>Email:</strong> $email</p>
@@ -146,9 +149,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                      <p><strong>Additional Message:</strong> $message</p>";
 
             if (sendEmail($to, $subjectLine, $body, $email)) {
-                echo "Form 3 (Booking Form 2) submitted successfully!";
+                echo "Booking Form 2 submitted successfully!";
             } else {
-                echo "Error sending email.";
+                echo "Error sending the booking form email.";
             }
         }
     }
