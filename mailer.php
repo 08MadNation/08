@@ -7,25 +7,22 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-// Load environment variables from the .env file
-$dotenv = Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-// Function to send email via SMTP using PHPMailer with credentials from the .env file
+// Instead of loading a .env file, this uses the environment variables from GitHub Actions or deployment environment
+// Function to send email via SMTP using PHPMailer with credentials from environment variables
 function sendEmail($to, $subject, $body, $fromEmail) {
     $mail = new PHPMailer(true);
     try {
         // Server settings
         $mail->isSMTP();
-        $mail->Host = $_ENV['SMTP_HOST']; // SMTP server
+        $mail->Host = getenv('SMTP_HOST'); // SMTP server from environment
         $mail->SMTPAuth = true;
-        $mail->Username = $_ENV['SMTP_USERNAME']; // SMTP username
-        $mail->Password = $_ENV['SMTP_PASSWORD']; // SMTP password
+        $mail->Username = getenv('SMTP_USERNAME'); // SMTP username from environment
+        $mail->Password = getenv('SMTP_PASSWORD'); // SMTP password from environment
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = $_ENV['SMTP_PORT']; // TCP port
+        $mail->Port = getenv('SMTP_PORT'); // SMTP port from environment
 
         // Recipients
-        $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']); // Sender's info from .env
+        $mail->setFrom(getenv('SMTP_FROM_EMAIL'), getenv('SMTP_FROM_NAME')); // Sender's info from environment
         $mail->addAddress($to); // Add recipient email
 
         // Content
@@ -57,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
 
     // Email settings
-    $to = 'admin@08madnation.pro'; //receiving email
+    $to = 'info@08madnation.pro'; // The email address that will receive the form submissions
     $subjectLine = "New Submission from Website";
 
     // Basic validations
