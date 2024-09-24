@@ -86,7 +86,7 @@
                                         <ul class="dropdown">
                                             <li><a href="event.html">Events</a></li>
                                             <li><a href="music.html">Musics</a></li>
-                                            <!-- <li><a href="login.html">Login</a></li> -->
+                                            <li><a href="login.html">Login</a></li>
                                             <li><a href="#">Special Offer & FAQ</a>
                                                 <ul class="dropdown">
                                                     <li><a href="specialoffer.html">Special Offer</a></li>
@@ -268,7 +268,7 @@
                     <div class="single-album">
                         <img src="img/bg-img/Ouhlala.jpg" alt="">
                         <div class="album-info">
-                            <a href="https://youtu.be/HdbV713NtWg?si=am-O0CDTS0MfOu1X" target="_blank">
+                            <a href="https://youtu.be/HdbV713NtWg?si=am-O0CDTS0MfOu1X">
                                 <h5>Pildash</h5>
                             </a>
                             <p>Ouh lala</p>
@@ -294,7 +294,7 @@
                     <div class="single-album">
                         <img src="img/bg-img/noexcuses.jpg" alt="">
                         <div class="album-info">
-                            <a href="https://youtu.be/7eiRFny2hLI?si=MjZuKSImp2ule4AM" target="_blank">
+                            <a href="https://youtu.be/7eiRFny2hLI?si=MjZuKSImp2ule4AM">
                                 <h5>Sony Clever</h5>
                             </a>
                             <p>No Excuses</p>
@@ -307,7 +307,7 @@
                     <div class="single-album">
                         <img src="img/bg-img/You&I.jpg" alt="">
                         <div class="album-info">
-                            <a href="https://youtu.be/kTZBAGTrZPk?si=TADLyaBfkyqth80R" target="_blank">
+                            <a href="https://youtu.be/kTZBAGTrZPk?si=TADLyaBfkyqth80R">
                                 <h5>Ghetto - Bro</h5>
                             </a>
                             <p>You & I</p>
@@ -320,7 +320,7 @@
                     <div class="single-album">
                         <img src="img/bg-img/sixam.jpg" alt="">
                         <div class="album-info">
-                            <a href="https://youtu.be/7lVZowrM-pc?si=On77_xEGsn7qWrTJ" target="_blank">
+                            <a href="https://youtu.be/7lVZowrM-pc?si=On77_xEGsn7qWrTJ">
                                 <h5>Chris Tsuanna</h5>
                             </a>
                             <p>6AM (ft. FRESH-D)</p>
@@ -422,7 +422,7 @@
                             </div>
                         </div>
                         <div class="album-info">
-                            <a href="https://music.apple.com/ph/album/og-single/1689936056" target="_blank">
+                            <a href="https://music.apple.com/ph/album/og-single/1689936056">
                                 <h5>Fresh-D</h5>
                             </a>
                             <p>OG</p>
@@ -554,29 +554,32 @@
                 <div class="col-12">
                     <!-- Contact Form Area -->
                     <div class="contact-form-area">
-                        <form action="#" method="post">
+                        <form action="mailer.php" method="post">
+                            <!-- Hidden form type input -->
+                            <input type="hidden" name="form_type" value="contact_form">
+            
                             <div class="row">
                                 <div class="col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Name">
+                                    <div class="form-group wow fadeInUp" data-wow-delay="100ms">
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                    <div class="form-group wow fadeInUp" data-wow-delay="200ms">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <div class="form-group wow fadeInUp" data-wow-delay="300ms">
+                                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
                                     </div>
                                 </div>
-                                <div class="col-12 text-center">
+                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
                                     <button class="btn madnation-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
                                 </div>
                             </div>
@@ -602,7 +605,6 @@
                     <div class="footer-social-nav">
                         <ul>
                             <li><a href="https://wa.me/639623471790" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                            <li><a href="https://discord.gg/n5UhYGP5" target="_blank"><i class="fab fa-discord" aria-hidden="true"></i></a></li>
                             <li><a href="https://www.tiktok.com/@08madnation?_t=8plxSdGpVq5&_r=1" target="_blank"><i class="fab fa-tiktok" aria-hidden="true"></i></a></li>
                             <li><a href="https://www.instagram.com/08madnation?igsh=bng1dTFodGQ4ZnJz&utm_source=qr" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                             <li><a href="https://youtube.com/@08madnation?si=eDlXN3iziOpNrpMq" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
