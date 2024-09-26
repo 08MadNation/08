@@ -264,10 +264,10 @@
 
             <!-- Booking Form for Console -->
             <div class="booking-form">
-                <form action="mailer.php" method="post">
+                <form id="booking-form-2">
                     <!-- Hidden form type input -->
                     <input type="hidden" name="form_type" value="booking_form_2">
-
+            
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name" required>
@@ -282,7 +282,7 @@
                     </div>
                     <div class="form-group">
                         <label for="package">Select Your Recording Package</label>
-                        <select class="form-control" name="package" id="package">
+                        <select class="form-control" name="package" id="package" required>
                             <option value="Basic">Basic - ₱1500</option>
                             <option value="Standard">Standard - ₱2000</option>
                             <option value="Premium">Premium - ₱2500</option>
@@ -290,7 +290,7 @@
                     </div>
                     <div class="form-group">
                         <label for="console-hours">Book Console Hours</label>
-                        <select class="form-control" name="console-hours" id="console-hours">
+                        <select class="form-control" name="console-hours" id="console-hours" required>
                             <option value="1 Hour">1 Hour - ₱500</option>
                             <option value="2 Hours">2 Hours - ₱900</option>
                             <option value="5 Hours">5 Hours - ₱2000</option>
@@ -337,6 +337,29 @@
             event.preventDefault();
             alert('Thank you for your booking! We will get back to you soon.');
         });
+    </script>
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "wZYkZcMvvmk-hsXs-",  
+        });
+    })();
     </script>
 </body>
 
