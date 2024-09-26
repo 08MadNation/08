@@ -131,6 +131,7 @@
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Booking Area Start ##### -->
+    <!-- ##### Booking Area Start ##### -->
     <section class="booking-area section-padding-100">
         <div class="container">
             <div class="row justify-content-center">
@@ -139,10 +140,10 @@
                         <h3>Book Your Session</h3>
                         <!-- Booking Form -->
                         <div class="booking-form">
-                            <form action="mailer.php" method="post">
+                            <form id="booking-form-1">
                                 <!-- Hidden form type input -->
                                 <input type="hidden" name="form_type" value="booking_form_1">
-                                
+
                                 <div class="form-group">
                                     <label for="name">Full Name</label>
                                     <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name" required>
@@ -157,7 +158,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="package">Select Your Package</label>
-                                    <select class="form-control" name="package" id="package">
+                                    <select class="form-control" name="package" id="package" required>
                                         <option value="Basic">Basic - ₱1500</option>
                                         <option value="Standard">Standard - ₱2000</option>
                                         <option value="Premium">Premium - ₱2500</option>
@@ -175,7 +176,6 @@
             </div>
         </div>
     </section>
-    
     <!-- ##### Booking Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
@@ -211,6 +211,17 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/plugins/plugins.js"></script>
     <script src="js/active.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "wZYkZcMvvmk-hsXs-",  
+        });
+    })();
+    </script>
 </body>
 
 </html>
