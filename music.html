@@ -554,7 +554,7 @@
                 <div class="col-12">
                     <!-- Contact Form Area -->
                     <div class="contact-form-area">
-                        <form action="mailer.php" method="post">
+                        <form id="contact-form">
                             <!-- Hidden form type input -->
                             <input type="hidden" name="form_type" value="contact_form">
             
@@ -629,6 +629,17 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "wZYkZcMvvmk-hsXs-",  
+        });
+    })();
+    </script>
 </body>
 
 </html>
