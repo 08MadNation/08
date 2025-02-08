@@ -361,7 +361,7 @@ Keyframes remain unchanged to preserve animation
   font-size: 24px;
   height: 40px;
   line-height: 40px;
-  right: 74px;
+  left: 30px;
   text-align: center;
   width: 40px;
   -webkit-transition-duration: 500ms;
