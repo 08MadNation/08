@@ -352,7 +352,7 @@ Keyframes remain unchanged to preserve animation
   background-attachment: fixed !important; }
 
 /* :: 3.7.0 ScrollUp */
-#scrollUp {
+/* #scrollUp {
   background-color: #000000;
   border-radius: 0;
   bottom: 10px;
@@ -373,7 +373,7 @@ Keyframes remain unchanged to preserve animation
       bottom: 30px; } }
   #scrollUp:hover {
     background-color: #fff;
-    color: #232323; }
+    color: #232323; } */
 
 /* :: 3.8.0 madnation Button */
 .madnation-btn {
