@@ -504,3 +504,143 @@ function clearErrors(form) {
         message.remove();
     });
 }
+initChatbot()
+
+
+// Urban 
+
+// $(document).ready(function () {
+//   // Simulated database of talents (replace with actual API call if needed)
+//   const talentsDatabase = [
+//     {
+//       name: "Like A Star 🌟",
+//       description: "Artist's Talent",
+//       image: "https://raw.githubusercontent.com/08MadNation/TEST/refs/heads/main/js/WhatsApp%20Image%202025-02-27%20at%2017.46.35_b460a731.jpg",
+//     },
+//     {
+//       name: "Young Trapo",
+//       description: "Artist's Talent",
+//       image: "https://raw.githubusercontent.com/08MadNation/TEST/refs/heads/main/js/2.jpg",
+//     },
+//     {
+//       name: "Spyk357",
+//       description: "Artist's Talent",
+//       image: "https://raw.githubusercontent.com/08MadNation/TEST/refs/heads/main/js/3.jpg",
+//     },
+//     {
+//       name: "Big Shata",
+//       description: "Artist's Talent",
+//       image: "https://raw.githubusercontent.com/08MadNation/TEST/refs/heads/main/js/1.jpg",
+//     },
+//     {
+//       name: "Maigane Flow",
+//       description: "Artist's Talent",
+//       image: "https://raw.githubusercontent.com/08MadNation/TEST/refs/heads/main/js/4.jpg",
+//     },
+//   ];
+
+//   let currentIndex = 6; // Start loading from index 6 (after initial 6 cards)
+
+//   // Function to load more talents
+//   function loadMoreTalents() {
+//     const container = $(".talent-talents-container");
+//     const nextIndex = currentIndex + 3;
+
+//     for (let i = currentIndex; i < Math.min(nextIndex, talentsDatabase.length); i++) {
+//       const talent = talentsDatabase[i];
+//       const card = `
+//         <div class="talent-card">
+//           <div class="talent-img-container">
+//             <img src="${talent.image}" alt="${talent.name}"/>
+//           </div>
+//           <div class="talent-card-details">
+//             <h2>${talent.name}</h2>
+//             <p>${talent.description}</p>
+//           </div>
+//         </div>
+//       `;
+//       container.append(card);
+//     }
+
+//     currentIndex = nextIndex;
+
+//     // Hide "Load More" button if all talents are loaded
+//     if (currentIndex >= talentsDatabase.length) {
+//       $("#load-more").hide();
+//     }
+//   }
+
+//   // Attach click event to "Load More" button
+//   $("#load-more").on("click", loadMoreTalents);
+// });
+
+// $(document).ready(function () {
+//     // Number of talents to load per click
+//     const talentsPerLoad = 6;
+
+//     // Cache the talent cards and hide all except the first set
+//     const $talentCards = $('.talent-card');
+//     const totalTalents = $talentCards.length;
+//     let visibleTalents = talentsPerLoad;
+
+//     // Initially hide all talents beyond the first set
+//     $talentCards.slice(visibleTalents).hide();
+
+//     // Load More Button Click Event
+//     $('#load-more').on('click', function () {
+//         // Calculate the next set of talents to show
+//         const nextTalents = visibleTalents + talentsPerLoad;
+
+//         // Show the next set of talents with a smooth fade-in effect
+//         $talentCards.slice(visibleTalents, nextTalents).fadeIn(500);
+
+//         // Update the visibleTalents counter
+//         visibleTalents = nextTalents;
+
+//         // Hide the "Load More" button if all talents are visible
+//         if (visibleTalents >= totalTalents) {
+//             $('#load-more').hide();
+//         }
+//     });
+
+//     // Hide the "Load More" button if there are no more talents to load initially
+//     if (visibleTalents >= totalTalents) {
+//         $('#load-more').hide();
+//     }
+// });
+
+
+$(document).ready(function() {
+    const loadMoreButton = $('#load-more'); // Target the "Load More" button
+    const talentsContainer = $('.talent-talents-container'); // Target the container for talent cards
+    const initialTalents = 6; // Number of talents initially displayed
+    const talentsPerLoad = 3; // Number of talents to load each time
+    let currentTalents = initialTalents;
+  
+    // Function to load more talents
+    function loadMoreTalents() {
+      const allTalents = talentsContainer.find('.talent-card'); // Get all talent cards
+      allTalents.slice(currentTalents, currentTalents + talentsPerLoad).show(); // Show the next set of talents
+      currentTalents += talentsPerLoad;
+  
+      // Hide the button if all talents are loaded
+      if (currentTalents >= allTalents.length) {
+        loadMoreButton.hide();
+      }
+    }
+  
+    // Initially hide all talents except the first few
+    function hideInitialTalents() {
+      const allTalents = talentsContainer.find('.talent-card'); // Get all talent cards
+      allTalents.slice(initialTalents).hide(); // Hide all talents except the first 6
+    }
+  
+    hideInitialTalents(); // Call the function to hide initial talents
+  
+    // Event listener for the "Load More" button
+    loadMoreButton.on('click', loadMoreTalents);
+  });
+
+
+//   video js 
+
